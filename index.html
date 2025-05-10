@@ -4,50 +4,97 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TokaTech – Piaskowanie i Renowacja</title>
-  
-  <!-- Styl do Lightbox -->
-  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet" />
-
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #f0f2f5;
     }
+
     header {
       background-color: #333;
-      padding: 10px;
+      padding: 15px 0;
       text-align: center;
     }
+
     nav a {
       color: white;
       text-decoration: none;
       margin: 0 15px;
       font-weight: bold;
+      font-size: 18px;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
     section {
       padding: 20px;
       display: none;
     }
+
     section.active {
       display: block;
     }
-    .gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
+
+    h1 {
+      margin-top: 0;
     }
-    .gallery img {
-      width: 300px;
+
+    /* GALERIA */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
       height: 200px;
       object-fit: cover;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
       cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.02);
+    }
+
+    /* KONTAKT */
+    .contact-card {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .contact-card p, .contact-card ul {
+      margin: 10px 0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 250px;
+      border: 0;
+      border-radius: 8px;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
     }
   </style>
 </head>
@@ -63,60 +110,41 @@
 
   <section id="about" class="active">
     <h1>O nas</h1>
-    <p>Witaj! Firma TokaTech zajmuje się profesjonalnym piaskowaniem oraz renowacją metalu, drewna i innych powierzchni. Pracujemy lokalnie, oferując najwyższą jakość usług.</p>
+    <p>Witaj! Firma <strong>TokaTech</strong> zajmuje się profesjonalnym piaskowaniem oraz renowacją metalu, drewna i innych powierzchni. Działamy lokalnie i stawiamy na jakość usług oraz zadowolenie klientów.</p>
   </section>
 
   <section id="gallery">
     <h1>Galeria</h1>
-    <div class="gallery">
-      <a href="img/photo1.jpg" data-lightbox="galeria" data-title="Opis zdjęcia 1">
-        <img src="img/photo1.jpg" alt="Zdjęcie 1">
-      </a>
-      <a href="img/photo2.jpg" data-lightbox="galeria" data-title="Opis zdjęcia 2">
-        <img src="img/photo2.jpg" alt="Zdjęcie 2">
-      </a>
-      <!-- Dodaj więcej zdjęć w tej samej formie -->
+    <div class="gallery-grid">
+      <img src="img/photo1.jpg" alt="Zdjęcie 1">
+      <img src="img/photo2.jpg" alt="Zdjęcie 2">
+      <img src="img/photo3.jpg" alt="Zdjęcie 3">
+      <img src="img/photo4.jpg" alt="Zdjęcie 4">
     </div>
   </section>
 
   <section id="contact">
-  <h1>Kontakt</h1>
-  <div style="max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); background-color: #f9f9f9;">
-    <p style="font-size: 20px; font-weight: bold; margin-bottom: 10px;">TokaTech – Piaskowanie i Renowacja</p>
-
-    <p>📍 <strong>Adres:</strong><br>
-    ul. Przykładowa 123, 00-000 Miasto</p>
-
-    <p>📞 <strong>Telefon:</strong> <a href="tel:+48123456789">+48 123 456 789</a></p>
-
-    <p>✉️ <strong>Email:</strong> <a href="mailto:kontakt@tokatech.pl">kontakt@tokatech.pl</a></p>
-
-    <p>🕒 <strong>Godziny otwarcia:</strong><br>
-      Poniedziałek – Piątek: 8:00 – 17:00<br>
-      Sobota: 9:00 – 13:00<br>
-      Niedziela: nieczynne
-    </p>
-
-    <div style="margin-top: 20px;">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.273893785596!2d21.0122283!3d52.2296756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669d3c96ab%3A0xb1c3f25b7f89f35a!2sWarszawa!5e0!3m2!1spl!2spl!4v1715349298322!5m2!1spl!2spl"
-        width="100%" height="250" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+    <h1>Kontakt</h1>
+    <div class="contact-card">
+      <p><strong>TokaTech – Piaskowanie i Renowacja</strong></p>
+      <p>📍 ul. Przykładowa 123, 00-000 Miasto</p>
+      <p>📞 <a href="tel:+48123456789">+48 123 456 789</a></p>
+      <p>✉️ <a href="mailto:kontakt@tokatech.pl">kontakt@tokatech.pl</a></p>
+      <p>🕒 <strong>Godziny otwarcia:</strong><br>
+         Pon–Pt: 8:00–17:00<br>
+         Sobota: 9:00–13:00<br>
+         Niedziela: nieczynne
+      </p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.273893785596!2d21.0122283!3d52.2296756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669d3c96ab%3A0xb1c3f25b7f89f35a!2sWarszawa!5e0!3m2!1spl!2spl!4v1715349298322!5m2!1spl!2spl"></iframe>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- Skrypt do przełączania sekcji -->
   <script>
     function showSection(id) {
       document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
       document.getElementById(id).classList.add('active');
     }
   </script>
-
-  <!-- Skrypt do Lightbox -->
-  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox-plus-jquery.min.js"></script>
 
 </body>
 </html>

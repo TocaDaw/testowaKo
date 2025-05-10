@@ -3,70 +3,79 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TokaTech – Piaskowanie i Renowacja</title>
+  <title>Toka Piaskowanie</title>
   <style>
     body {
       font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
       margin: 0;
       padding: 0;
     }
     header {
       background-color: #333;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
       color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
+      padding: 40px 20px;
+      text-align: center;
     }
     section {
       padding: 20px;
-      display: none;
+      max-width: 800px;
+      margin: auto;
     }
-    section.active {
-      display: block;
+    h2 {
+      color: #333;
     }
-    .gallery img {
-      width: 100%;
-      max-width: 300px;
-      margin: 10px;
+    ul {
+      padding-left: 20px;
+    }
+    footer {
+      background-color: #eee;
+      padding: 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #007acc;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <nav>
-      <a href="#" onclick="showSection('about')">O mnie</a>
-      <a href="#" onclick="showSection('gallery')">Galeria</a>
-    </nav>
+    <h1>Toka Piaskowanie</h1>
+    <p>Piaskowanie felg i konstrukcji stalowych</p>
   </header>
 
-  <section id="about" class="active">
-    <h1>O mnie</h1>
-    <p>Witaj! Nazywam się Tokarzewski i zajmuję się profesjonalnym piaskowaniem oraz renowacją metalu, drewna i innych powierzchni. Pracuję lokalnie, oferując najwyższą jakość usług.</p>
+  <section>
+    <h2>Nasze usługi</h2>
+    <ul>
+      <li>Piaskowanie felg aluminiowych i stalowych</li>
+      <li>Czyszczenie konstrukcji stalowych</li>
+      <li>Renowacja elementów metalowych</li>
+      <li>Malowanie proszkowe (opcjonalnie)</li>
+      <li>Piaskowanie mebli ogrodowych</li>
+    </ul>
   </section>
 
-  <section id="gallery">
-    <h1>Galeria</h1>
-    <div class="gallery">
-      <img src="https://via.placeholder.com/300" alt="Przykładowe zdjęcie 1">
-      <img src="https://via.placeholder.com/300" alt="Przykładowe zdjęcie 2">
-      <!-- Możesz dodać więcej zdjęć tutaj -->
-    </div>
+  <section>
+    <h2>Kontakt</h2>
+    <p><strong>Telefon:</strong> 000 111 200</p>
+    <p><strong>E-mail:</strong> <a href="mailto:tocadawda@gmail.com">tocadawda@gmail.com</a></p>
+    <p><strong>Miasto:</strong> Grajewo</p>
+    <a class="btn" href="tel:000111200">Zadzwoń teraz</a>
+    <a class="btn" href="mailto:tocadawda@gmail.com">Napisz e-mail</a>
   </section>
 
-  <script>
-    function showSection(id) {
-      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-    }
-  </script>
+  <footer>
+    &copy; 2025 Toka Piaskowanie | Grajewo
+  </footer>
 
 </body>
 </html>
+

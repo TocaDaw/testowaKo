@@ -10,16 +10,16 @@
     }
 
     body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-image: url('img/tlo.png');
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #f0f2f5;
-}
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('img/tlo.png');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-color: #f0f2f5;
+    }
 
     header {
       background-color: #333;
@@ -95,6 +95,15 @@
       margin-top: 15px;
     }
 
+    /* Nowa klasa text-box */
+    .text-box {
+      background-color: rgba(255, 255, 255, 0.7); /* Jasne tło z przezroczystością */
+      padding: 1rem;
+      border-radius: 8px;
+      color: #000; /* Ciemny tekst */
+      max-width: 800px;
+    }
+
     @media (max-width: 600px) {
       nav a {
         display: block;
@@ -115,7 +124,9 @@
 
   <section id="about" class="active">
     <h1>O nas</h1>
-    <p>Witaj! Firma <strong>TokaTech</strong> zajmuje się profesjonalnym piaskowaniem oraz renowacją metalu, drewna i innych powierzchni. Działamy lokalnie i stawiamy na jakość usług oraz zadowolenie klientów.</p>
+    <div class="text-box">
+      <p>Witaj! Firma <strong>TokaTech</strong> zajmuje się profesjonalnym piaskowaniem oraz renowacją metalu, drewna i innych powierzchni. Działamy lokalnie i stawiamy na jakość usług oraz zadowolenie klientów.</p>
+    </div>
   </section>
 
   <section id="gallery">
@@ -130,7 +141,7 @@
 
   <section id="contact">
     <h1>Kontakt</h1>
-    <div class="contact-card">
+    <div class="contact-card text-box"> <!-- Zastosowanie klasy .text-box tutaj -->
       <p><strong>TokaTech – Piaskowanie i Renowacja</strong></p>
       <p>📍 ul. Przykładowa 123, 00-000 Miasto</p>
       <p>📞 <a href="tel:+48123456789">+48 123 456 789</a></p>

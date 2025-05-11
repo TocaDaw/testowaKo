@@ -19,6 +19,7 @@
       background-repeat: no-repeat;
       background-position: center;
       background-color: #f0f2f5;
+      color: #000;
     }
 
     header {
@@ -33,20 +34,13 @@
       margin: 0 15px;
       font-weight: bold;
       font-size: 18px;
-      padding: 10px 15px;
-      display: inline-block;
-      border-radius: 8px;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    nav a.active {
-      background-color: #ff6347;
-      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
     }
 
     nav a:hover {
-      background-color: #555;
-      text-decoration: underline;
+      background-color: rgba(255, 255, 255, 0.2);
     }
 
     section {
@@ -58,11 +52,6 @@
       display: block;
     }
 
-    h1 {
-      margin-top: 0;
-      margin-bottom: 1rem;
-    }
-
     .text-box {
       background-color: rgba(255, 255, 255, 0.7);
       padding: 1rem;
@@ -71,6 +60,15 @@
       max-width: 800px;
     }
 
+    h1.text-box {
+      display: inline-block;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    /* GALERIA */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -91,13 +89,10 @@
       transform: scale(1.02);
     }
 
+    /* KONTAKT */
     .contact-card {
       max-width: 600px;
       margin: 0 auto;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
     .contact-card p, .contact-card ul {
@@ -124,9 +119,9 @@
 
   <header>
     <nav>
-      <a href="#about" onclick="showSection('about', this)" class="active">O nas</a>
-      <a href="#gallery" onclick="showSection('gallery', this)">Galeria</a>
-      <a href="#contact" onclick="showSection('contact', this)">Kontakt</a>
+      <a href="#" onclick="showSection('about')">O nas</a>
+      <a href="#" onclick="showSection('gallery')">Galeria</a>
+      <a href="#" onclick="showSection('contact')">Kontakt</a>
     </nav>
   </header>
 
@@ -164,12 +159,9 @@
   </section>
 
   <script>
-    function showSection(id, element) {
+    function showSection(id) {
       document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
       document.getElementById(id).classList.add('active');
-
-      document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
-      element.classList.add('active');
     }
   </script>
 

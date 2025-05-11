@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TokaTech – Piaskowanie i Renowacja</title>
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       font-family: Arial, sans-serif;
@@ -58,13 +60,12 @@
       max-width: 800px;
     }
 
-    h1.text-box { display: inline-block; }
+    h1.text-box {
+      display: inline-block;
+    }
 
-    h1 { margin-top: 0; }
-
-    ul.services {
-      padding-left: 1.2em;
-      list-style: disc;
+    h1 {
+      margin-top: 0;
     }
 
     .gallery-grid {
@@ -115,7 +116,6 @@
       }
     }
 
-    /* Modal */
     .modal {
       display: none;
       position: fixed;
@@ -124,7 +124,7 @@
       top: 0;
       width: 100%;
       height: 100%;
-      overflow: auto;
+      overflow: hidden;
       background-color: rgba(0,0,0,0.9);
     }
 
@@ -145,30 +145,37 @@
       font-size: 40px;
       font-weight: bold;
       cursor: pointer;
+      z-index: 1001;
     }
 
     .modal-close:hover {
       color: #ccc;
     }
 
-    .modal-nav {
+    .modal-arrow {
       position: absolute;
       top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
       transform: translateY(-50%);
-    }
-
-    .modal-nav span {
-      font-size: 40px;
+      font-size: 50px;
       color: white;
+      background-color: rgba(0,0,0,0.3);
+      padding: 10px;
       cursor: pointer;
+      z-index: 1001;
+      border-radius: 10px;
       user-select: none;
     }
 
-    .modal-nav span:hover {
-      color: #ccc;
+    .modal-arrow.left {
+      left: 20px;
+    }
+
+    .modal-arrow.right {
+      right: 20px;
+    }
+
+    .modal-arrow:hover {
+      background-color: rgba(0,0,0,0.6);
     }
   </style>
 </head>
@@ -176,10 +183,10 @@
 
   <header>
     <nav>
-      <a href="#" onclick="showSection('about')">O nas</a>
-      <a href="#" onclick="showSection('services')">Zakres usług</a>
-      <a href="#" onclick="showSection('gallery')">Galeria</a>
-      <a href="#" onclick="showSection('contact')">Kontakt</a>
+      <a href="#" onclick="showSection('about', event)">O nas</a>
+      <a href="#" onclick="showSection('services', event)">Zakres usług</a>
+      <a href="#" onclick="showSection('gallery', event)">Galeria</a>
+      <a href="#" onclick="showSection('contact', event)">Kontakt</a>
     </nav>
   </header>
 
@@ -193,7 +200,7 @@
   <section id="services">
     <div class="text-box">
       <h1>Zakres usług</h1>
-      <ul class="services">
+      <ul>
         <li>Piaskowanie przyczep</li>
         <li>Piaskowanie kamieni</li>
         <li>Piaskowanie felg</li>
@@ -205,13 +212,13 @@
   <section id="gallery">
     <h1 class="text-box">Galeria</h1>
     <div class="gallery-grid">
-      <img src="img/photo1.jpeg" alt="Zdjęcie 1" onclick="openModal(this.src, 0)">
-      <img src="img/photo2.jpeg" alt="Zdjęcie 2" onclick="openModal(this.src, 1)">
-      <img src="img/photo3.jpg" alt="Zdjęcie 3" onclick="openModal(this.src, 2)">
-      <img src="img/photo4.jpg" alt="Zdjęcie 4" onclick="openModal(this.src, 3)">
-      <img src="img/photo5.jpg" alt="Zdjęcie 5" onclick="openModal(this.src, 4)">
-      <img src="img/photo6.jpeg" alt="Zdjęcie 6" onclick="openModal(this.src, 5)">
-      <img src="img/photo7.jpg" alt="Zdjęcie 7" onclick="openModal(this.src, 6)">
+      <img src="img/photo1.jpeg" alt="Zdjęcie 1" onclick="openModal(0)">
+      <img src="img/photo2.jpeg" alt="Zdjęcie 2" onclick="openModal(1)">
+      <img src="img/photo3.jpg" alt="Zdjęcie 3" onclick="openModal(2)">
+      <img src="img/photo4.jpg" alt="Zdjęcie 4" onclick="openModal(3)">
+      <img src="img/photo5.jpg" alt="Zdjęcie 5" onclick="openModal(4)">
+      <img src="img/photo6.jpeg" alt="Zdjęcie 6" onclick="openModal(5)">
+      <img src="img/photo7.jpg" alt="Zdjęcie 7" onclick="openModal(6)">
     </div>
   </section>
 
@@ -227,4 +234,64 @@
          Sobota: 9:00–13:00<br>
          Niedziela: nieczynne
       </p>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.273893785596!2d21.0122283!3d52.2296756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669d3c96ab%3A0xb1c3f25b7f89f35a!2sWarszawa!5e
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.273893785596!2d21.0122283!3d52.2296756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669d3c96ab%3A0xb1c3f25b7f89f35a!2sWarszawa!5e0!3m2!1spl!2spl!4v1715349298322!5m2!1spl!2spl"></iframe>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div id="imgModal" class="modal">
+    <span class="modal-close" onclick="closeModal()">×</span>
+    <span class="modal-arrow left" onclick="prevImage(event)">❮</span>
+    <img class="modal-content" id="modalImage" alt="Powiększone zdjęcie">
+    <span class="modal-arrow right" onclick="nextImage(event)">❯</span>
+  </div>
+
+  <script>
+    function showSection(id, event) {
+      event.preventDefault();
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+
+    const galleryImages = [
+      "img/photo1.jpeg",
+      "img/photo2.jpeg",
+      "img/photo3.jpg",
+      "img/photo4.jpg",
+      "img/photo5.jpg",
+      "img/photo6.jpeg",
+      "img/photo7.jpg"
+    ];
+
+    let currentImageIndex = 0;
+
+    function openModal(index) {
+      currentImageIndex = index;
+      document.getElementById("modalImage").src = galleryImages[currentImageIndex];
+      document.getElementById("imgModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("imgModal").style.display = "none";
+    }
+
+    function prevImage(event) {
+      event.stopPropagation();
+      currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+      document.getElementById("modalImage").src = galleryImages[currentImageIndex];
+    }
+
+    function nextImage(event) {
+      event.stopPropagation();
+      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+      document.getElementById("modalImage").src = galleryImages[currentImageIndex];
+    }
+
+    // Zamknij modal przy kliknięciu poza obrazem
+    document.getElementById("imgModal").addEventListener("click", function (e) {
+      if (e.target === this) closeModal();
+    });
+  </script>
+
+</body>
+</html>

@@ -60,6 +60,7 @@
 
     h1 {
       margin-top: 0;
+      margin-bottom: 1rem;
     }
 
     .text-box {
@@ -130,49 +131,41 @@
   </header>
 
   <section id="about" class="active">
-    <div class="text-box">
-      <h1>O nas</h1>
-      <p>Witaj! Firma <strong>TokaTech</strong> zajmuje się profesjonalnym piaskowaniem oraz renowacją metalu, drewna i innych powierzchni. Działamy lokalnie i stawiamy na jakość usług oraz zadowolenie klientów.</p>
-    </div>
+    <h1 class="text-box">O nas</h1>
+    <p>Witaj! Firma <strong>TokaTech</strong> zajmuje się profesjonalnym piaskowaniem oraz renowacją metalu, drewna i innych powierzchni. Działamy lokalnie i stawiamy na jakość usług oraz zadowolenie klientów.</p>
   </section>
 
   <section id="gallery">
-    <div class="text-box">
-      <h1>Galeria</h1>
-      <div class="gallery-grid">
-        <img src="img/photo1.jpg" alt="Zdjęcie 1">
-        <img src="img/photo2.jpg" alt="Zdjęcie 2">
-        <img src="img/photo3.jpg" alt="Zdjęcie 3">
-        <img src="img/photo4.jpg" alt="Zdjęcie 4">
-      </div>
+    <h1 class="text-box">Galeria</h1>
+    <div class="gallery-grid">
+      <img src="img/photo1.jpg" alt="Zdjęcie 1">
+      <img src="img/photo2.jpg" alt="Zdjęcie 2">
+      <img src="img/photo3.jpg" alt="Zdjęcie 3">
+      <img src="img/photo4.jpg" alt="Zdjęcie 4">
     </div>
   </section>
 
   <section id="contact">
-    <div class="text-box">
-      <h1>Kontakt</h1>
-      <div class="contact-card">
-        <p><strong>TokaTech – Piaskowanie i Renowacja</strong></p>
-        <p>📍 ul. Przykładowa 123, 00-000 Miasto</p>
-        <p>📞 <a href="tel:+48123456789">+48 123 456 789</a></p>
-        <p>✉️ <a href="mailto:kontakt@tokatech.pl">kontakt@tokatech.pl</a></p>
-        <p>🕒 <strong>Godziny otwarcia:</strong><br>
-           Pon–Pt: 8:00–17:00<br>
-           Sobota: 9:00–13:00<br>
-           Niedziela: nieczynne
-        </p>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.273893785596!2d21.0122283!3d52.2296756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669d3c96ab%3A0xb1c3f25b7f89f35a!2sWarszawa!5e0!3m2!1spl!2spl!4v1715349298322!5m2!1spl!2spl"></iframe>
-      </div>
+    <h1 class="text-box">Kontakt</h1>
+    <div class="contact-card">
+      <p><strong>TokaTech – Piaskowanie i Renowacja</strong></p>
+      <p>📍 ul. Przykładowa 123, 00-000 Miasto</p>
+      <p>📞 <a href="tel:+48123456789">+48 123 456 789</a></p>
+      <p>✉️ <a href="mailto:kontakt@tokatech.pl">kontakt@tokatech.pl</a></p>
+      <p>🕒 <strong>Godziny otwarcia:</strong><br>
+         Pon–Pt: 8:00–17:00<br>
+         Sobota: 9:00–13:00<br>
+         Niedziela: nieczynne
+      </p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2443.273893785596!2d21.0122283!3d52.2296756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc669d3c96ab%3A0xb1c3f25b7f89f35a!2sWarszawa!5e0!3m2!1spl!2spl!4v1715349298322!5m2!1spl!2spl"></iframe>
     </div>
   </section>
 
   <script>
     function showSection(id, element) {
-      // Pokaż wybraną sekcję
       document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
       document.getElementById(id).classList.add('active');
 
-      // Zaznacz aktywną zakładkę w menu
       document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
       element.classList.add('active');
     }
